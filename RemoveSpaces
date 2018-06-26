@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+//very simple problem, just remove white space
+class GFG {
+	public static void main (String[] args) {
+		Scanner s = new Scanner(System.in);
+		int T;
+		String input;
+		
+		
+		T = s.nextInt();
+		s.nextLine();
+		
+		while(T-- > 0) {
+		    input = s.nextLine();
+		    input = input.replaceAll(" ", "");
+		    System.out.println(input); 
+		}
+		s.close();
+	}
+}
