@@ -1,0 +1,34 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+//look for second largest number in input
+class GFG {
+	public static void main (String[] args) {
+	Scanner s = new Scanner(System.in);
+		int T, i = 0;
+		String input;
+		
+		
+		T = s.nextInt();
+		s.nextLine();
+		
+		while(T-- > 0) {
+			i = s.nextInt();
+			s.nextLine();
+			String[] compare = new String[i];
+			Integer[] ints = new Integer[i];
+		    input = s.nextLine();
+		    compare = input.split(" ");
+		    for(int n = 0; n < compare.length; n++) {
+		    	ints[n] = Integer.parseInt(compare[n]);
+		    }
+		    Arrays.sort(ints);
+		    if(compare.length > 1) {
+		    	System.out.println(ints[i-2]);
+		    } else {
+		    	System.out.println(ints[0]);
+		    }
+		}
+		s.close();
+	}
+}
