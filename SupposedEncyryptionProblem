@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+//Actually just count same letters in a row, add letter and the count to StringBuilder, reverse and output
+class GFG {
+	public static void main (String[] args) {
+		Scanner s = new Scanner(System.in);
+		int T;
+		String input;
+		
+		T = s.nextInt();
+		s.nextLine();
+		
+		while(T-- > 0) {
+			input = s.nextLine();
+      //checks both sides
+			String[] d = input.split("(?<=(.))(?!\\1)");
+			StringBuilder sb = new StringBuilder();
+			for(int i = 0; i < d.length; i++) {
+				sb.append(d[i].charAt(0));
+				sb.append(d[i].length());
+			}
+			System.out.println(sb.reverse());
+		}
+		s.close();
+	}
+}
