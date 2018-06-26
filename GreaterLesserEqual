@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+//also very simple, just output whether a and b are greater than, less than, or equal too
+class GFG {
+	public static void main (String[] args) {
+		Scanner s = new Scanner(System.in);
+		int T;
+		String input;
+		String[] splits = new String[2];
+		Integer[] compare = new Integer[2];
+		
+		T = s.nextInt();
+		s.nextLine();
+		
+		while(T-- > 0) {
+		    input = s.nextLine();
+		    splits = input.split(" ");
+		    compare[0] = Integer.parseInt(splits[0]);
+		    compare[1] = Integer.parseInt(splits[1]);
+		    if(compare[0] == compare[1]) {
+		    	System.out.println(compare[0] + " is equals to " + compare[1]);
+		    }
+		    if(compare[0] > compare[1]) {
+		    	System.out.println(compare[0] + " is greater than " + compare[1]);
+		    }
+		    if(compare[0] < compare[1]) {
+		    	System.out.println(compare[0] + " is less than " + compare[1]);
+		    }
+		}
+		s.close();
+	}
+}
