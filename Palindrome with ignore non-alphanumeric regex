@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+class GFG {
+	public static void main (String[] args) {
+		Scanner s = new Scanner(System.in);
+		int T;
+		String a, b;
+		
+		T = s.nextInt();
+		s.nextLine();
+		
+		while(T-- > 0) {
+      //easy to reverse
+			StringBuilder sb = new StringBuilder();
+			sb.append(s.nextLine());
+      //easy to operate on with regex
+			a = sb.toString().replaceAll("[^a-zA-Z0-9]", "");
+			b = sb.reverse().toString().replaceAll("[^a-zA-Z0-9]", "");
+			if(a.equalsIgnoreCase(b)) {
+				System.out.println("YES");
+			} else {
+				System.out.println("NO");
+			}
+		}
+		s.close();
+	}
+}
