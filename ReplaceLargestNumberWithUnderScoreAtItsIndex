@@ -1,0 +1,25 @@
+import java.util.OptionalInt;
+import java.util.Scanner;
+import java.util.stream.Stream;
+
+class GFG {
+	public static void main (String[] args) {
+		Scanner s = new Scanner(System.in);
+		int T, N;
+		
+		T = s.nextInt();
+		s.nextLine();
+		
+		while(T-- > 0) {
+      //for uneeded array size in problem question
+			N = s.nextInt();
+			s.nextLine();
+			String[] line = s.nextLine().split(" ");
+			OptionalInt max = Stream.of(line).mapToInt(e -> Integer.parseInt(e)).max();
+			Stream<String> modString = Stream.of(line).map(e -> {if(Integer.parseInt(e) == max.getAsInt()) return "_ "; else return e + " ";});
+			modString.forEach(System.out::print);
+			System.out.println();
+		}
+		s.close();
+	}
+}
