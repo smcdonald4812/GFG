@@ -1,0 +1,25 @@
+import java.util.Arrays;
+import java.util.Scanner;
+import java.util.stream.Stream;
+
+//take ints and filter out any that are less than k. Then output new sorted array.
+public class Practice {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		int T;
+		
+		T = s.nextInt();
+		s.nextLine();
+		
+		while(T-- > 0) {
+		    //another int is input in practice problem so extra s.nextInt();
+			  int k;
+		    s.nextInt();
+		    k = s.nextInt();
+		    s.nextLine();
+		    int[] arrInts = Stream.of(s.nextLine().split(" ")).mapToInt(Integer::valueOf).sorted().filter(e -> e >= k).toArray();
+		    System.out.println(Arrays.toString(arrInts));
+		}
+		s.close();
+	}
+}
