@@ -1,0 +1,19 @@
+/*package whatever //do not write package name here */
+
+import java.util.*;
+import java.time.*;
+
+class GFG {
+	public static void main (String[] args) {
+		Scanner s = new Scanner(System.in);
+		
+		int T = s.nextInt();
+		s.nextLine();
+		
+		while(T-- > 0) {
+		    String[] dt = s.nextLine().split(" ");
+		    DayOfWeek n = LocalDate.of(Integer.parseInt(dt[2]), Integer.parseInt(dt[1]), Integer.parseInt(dt[0])).getDayOfWeek();
+		    System.out.println(n.toString().toUpperCase());
+		}
+	}
+}
