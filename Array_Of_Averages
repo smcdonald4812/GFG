@@ -1,0 +1,40 @@
+/*package whatever //do not write package name here */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class GFG {
+	public static void main (String[] args) {
+		Scanner s = new Scanner(System.in);
+		
+		int T = s.nextInt();
+		s.nextLine();
+		
+		while(T-- > 0) {
+		    int ignore = s.nextInt();
+		    int x = s.nextInt();
+		    s.nextLine();
+		    String[] str = s.nextLine().split(" ");
+		    int[] counts = new int[str.length], total = new int[str.length];
+		    
+		    for(int i = 0; i < str.length; i++) {
+		        int avg = (x + Integer.parseInt(str[i])) / 2;
+		        counts[i] = avg;
+		    }
+		    for(int i = 0; i < str.length; i++) {
+		        int c = 0;
+		        for(int j = 0; j < str.length; j++) {
+		            if(counts[i] == Integer.parseInt(str[j])) {
+		                c++;
+		            }
+		        }
+		        total[i] = c;
+		    }
+		    Arrays.stream(total).forEach(e -> System.out.print(e + " "));
+		    System.out.println();
+		}
+		
+		s.close();
+	}
+}
