@@ -2,7 +2,7 @@
 //A function to find the total of all possible combinations of two ints n times with zero as the first number.
 
 static int[] stones(int n, int a, int b) {
-        int[] temp = new int[n * 2];
+        int[] temp = new int[n];
         int y = 1, z = 0, d = 1;
         for(int i = 0; i < temp.length; i++) {
             //gets all combinations by decrementing the As and incrementing the Bs each iteration
