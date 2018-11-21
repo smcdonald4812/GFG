@@ -1,0 +1,21 @@
+//HackerRank not GFG
+//A function to find the total of all possible combinations of two ints n times with zero as the first number.
+
+static int[] stones(int n, int a, int b) {
+        int[] temp = new int[n * 2];
+        int y = 1, z = 0, d = 1;
+        for(int i = 0; i < temp.length; i++) {
+            //gets all combinations by decrementing the As and incrementing the Bs each iteration
+            temp[i] = ((n - y++) * a) + (z++ * b);
+        }
+        Arrays.sort(temp);
+        int[] combos = new int[n];
+        combos[0] = temp[0];
+        for(int i = 1; i < combos.length; i++) {
+            //getting rid of duplicate numbers
+            if(temp[i] != temp[i-1]) {
+                combos[d++] = temp[i];
+            }
+        }
+        return combos;
+    }
